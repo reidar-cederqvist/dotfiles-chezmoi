@@ -1,0 +1,131 @@
+{
+	"layer": "top",
+	"position": "top",
+	"mod": "dock",
+	"exclusive": true,
+	"passthrough": false,
+	"gtk-layer-shell": true,
+	"height": 0,
+	"modules-left": [
+		"custom/weather",
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"hyprland/window",
+		"clock"
+	],
+	"modules-right": [
+		"custom/updates",
+		"custom/language",
+		"battery",
+		"network",
+		"pulseaudio",
+		"pulseaudio#microphone",
+		"tray"
+	],
+
+	"hyprland/window": {
+		"format": "{}",
+		"rewrite": {
+			"(.*) — Mozilla Firefox": "🌎 $1",
+			"reidar@reidar-arch:(.*)": "> $1",
+			"(.*) - VIM" : " - $1"
+		}
+	},
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": false,
+		"on-click": "activate"
+	},
+	"custom/updates": {
+		"format": " {}",
+		"interval": 7200,                     // every two hours
+		"exec": "i=$(checkupdates); echo -n \"$i\" | wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
+		"exec-if": "exit 0",                  // always run; consider advanced run conditions
+		"on-click": "alacritty -e paru -Syyu; pkill -RTMIN+4 waybar", // update system
+		"signal": 4
+	},
+	"custom/weather" : {
+		"tooltip" : true,
+		"format" : "{}",
+		"interval" : 30,
+		"exec" : "~/.config/waybar/scripts/waybar-wttr.py",
+		"return-type" : "json"
+	},
+	"tray": {
+		"icon-size": 18,
+		"spacing": 10
+	},
+	"clock": {
+		"format": " {:%R %D}",
+		"format-alt": " {:%R, %b %d, %Y}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode"          : "year",
+			"mode-mon-col"  : 3,
+			"weeks-pos"     : "right",
+			"on-scroll"     : 1,
+			"on-click-right": "mode",
+			"format": {
+				"months":     "<span color='#ffead3'><b>{}</b></span>",
+				"days":       "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+				"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+	},
+	"network": {
+		"format": "{ifname}",
+		"interval": 10,
+		"format-ethernet": "{ipaddr}/{cidr}",
+		"tooltip-format-ethernet": "{ifname}:  {bandwidthUpBytes}  {bandwidthDownBytes}",
+		"max-length": 40
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 20
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{time} {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"tooltip": false,
+		"format-muted": " Muted",
+		"on-click": "pamixer -t",
+		"on-scroll-up": "pamixer -i 5",
+		"on-scroll-down": "pamixer -d 5",
+		"scroll-step": 5,
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		}
+	},
+	"pulseaudio#microphone": {
+		"format": "{format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": " Muted",
+		"on-click": "pamixer --default-source -t",
+		"on-scroll-up": "pamixer --default-source -i 5",
+		"on-scroll-down": "pamixer --default-source -d 5",
+		"scroll-step": 5
+	}
+}

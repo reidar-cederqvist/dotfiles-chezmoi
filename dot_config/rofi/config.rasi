@@ -1,0 +1,13 @@
+configuration {
+  display-drun: "Applications";
+  display-window: "Windows:";
+  drun-display-format: "{name}";
+  font: "JetBrainsMono Nerd Font Medium 16";
+  show-icons: true;
+  modi: "window,run,drun,emoji,calc";
+  icon-theme: "Noto";
+}
+
+@theme "/usr/share/rofi/themes/solarized.rasi"
+
+/* vim: ft=sass

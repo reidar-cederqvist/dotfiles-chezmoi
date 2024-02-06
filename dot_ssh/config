@@ -1,0 +1,38 @@
+Host 192.168.*.*
+	StrictHostKeyChecking no
+	UserKnownHostsFile=/dev/null
+	HostkeyAlgorithms +ssh-rsa
+
+Host 10.0.111.*
+	StrictHostKeyChecking no
+	UserKnownHostsFile=/dev/null
+	HostkeyAlgorithms +ssh-rsa
+
+Host 10.10.*.*
+	StrictHostKeyChecking no
+	UserKnownHostsFile=/dev/null
+
+Host routerlogin.net
+	StrictHostKeyChecking no
+	UserKnownHostsFile=/dev/null
+
+Host gerrit*
+	User reidar.cederqvist
+	StrictHostKeyChecking no
+	UserKnownHostsFile=/dev/null
+	PubkeyAcceptedKeyTypes +ssh-rsa
+
+Host dev.iopsys.eu
+	StrictHostKeyChecking no
+	UserKnownHostsFile=/dev/null
+
+Host se-ci-sbs1.genexislocal.nl
+	User reidar.cederqvist
+	StrictHostKeyChecking no
+	UserKnownHostsFile=/dev/null
+
+Host dev.iopsys.eu
+	AddressFamily inet
+
+Host pihole.lan
+	User pihole
