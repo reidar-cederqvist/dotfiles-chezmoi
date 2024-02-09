@@ -14,9 +14,9 @@ lock(){
 	for w in $workspaces; do
 		i3-msg workspace "$w"
 		i3-msg fullscreen disable
-		alacritty -o "window.startup_mode='Fullscreen'" -e bash -c 'sleep 0.1 && cmatrix -ab -C cyan' &
+		alacritty -o "window.startup_mode='Fullscreen'" -e bash -c 'sleep 0.2 && cmatrix -ab -C cyan' &
 		pids="$pids $!"
-		sleep 0.2
+		sleep 0.4
 	done
 	# start the lock
 	xtrlock
