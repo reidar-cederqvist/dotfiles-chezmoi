@@ -24,3 +24,5 @@
 [IncludeIf "gitdir:~/git/"]
 	path = .gitconfig-work
 
+[rerere]
+	enabled = true

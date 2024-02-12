@@ -15,7 +15,7 @@ for dir in $search_dirs; do
 		while [[ "$exec_string" == *"%"* ]]; do
 			exec_string=${exec_string%\%*}
 		done
-		[ $exec_string ] && break
+		[ "$exec_string" ] && break
 	done
 done
 
