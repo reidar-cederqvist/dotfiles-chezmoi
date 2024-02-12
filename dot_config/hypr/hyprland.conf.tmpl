@@ -7,23 +7,18 @@
 # For a full list, see the wiki
 #
 {{ if eq .chezmoi.hostname "reidar-work-arch" }}
-
 $mainMonitor = eDP-1
 $secMonitor = eDP-1
 # See https://wiki.hyprland.org/Configuring/Monitors/
 monitor = $mainMonitor, highres, 0x0, 1, bitdepth, 10
 monitor = , preferred, auto, auto
-
 {{ else if eq .chezmoi.hostname "reidar-home-arch" }}
-
 $mainMonitor = DP-2
 $secMonitor = HDMI-A-1
 # See https://wiki.hyprland.org/Configuring/Monitors/
 monitor = $secMonitor, 1920x1080@60, 0x140, 1,bitdepth,10
 monitor = $mainMonitor, 2560x1440@144, 1920x0, 1,bitdepth,10
-
 {{ end }}
-
 workspace = 1, monitor:$mainMonitor
 workspace = 2, monitor:$mainMonitor
 workspace = 3, monitor:$mainMonitor
