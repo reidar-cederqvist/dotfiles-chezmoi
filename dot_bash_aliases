@@ -16,14 +16,15 @@ alias resetkb='setxkbmap -layout se -variant nodeadkeys'
 alias c='clear'
 
 # ls aliases
-# Changing "ls" to "exa"
-if which exa >/dev/null 2>/dev/null; then
-	alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-	alias ll='exa -ahlF --color=always --group-directories-first'  # long format
-	alias lt='exa -aT --color=always --group-directories-first' # tree listing
-	alias l.='exa -a | egrep "^\."'
+# Changing "ls" to "eza"
+if which eza >/dev/null 2>/dev/null; then
+	alias ls='eza -l --color=always --group-directories-first'  # all files and dirs
+	alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+	alias ll='eza -ahlF --color=always --group-directories-first'  # long format
+	alias lt='eza -aT --color=always --group-directories-first' # tree listing
+	alias l.='eza -a | egrep "^\."'
 else
-	alias ls='ls -al --color=always --group-directories-first' # my preferred listing
+	alias ls='ls -l --color=always --group-directories-first' # my preferred listing
 	alias la='ls -a --color=always --group-directories-first'  # all files and dirs
 	alias ll='ls -ahlF --color=always --group-directories-first'  # long format
 	alias lt='ls -aT --color=always --group-directories-first' # tree listing
@@ -32,7 +33,7 @@ fi
 
 # Colorize output
 alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
+alias egrep='grep -E --color=auto'
 alias fgrep='fgrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip -color=auto'
