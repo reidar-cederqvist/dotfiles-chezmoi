@@ -21,8 +21,11 @@
 [init]
 	defaultBranch = main
 
-[IncludeIf "gitdir:~/git/"]
-	path = .gitconfig-work
+[IncludeIf "gitdir:~/git/genexis"]
+	path = .gitconfig-genexis
+
+[IncludeIf "gitdir:~/git/iopsys"]
+	path = .gitconfig-iopsys
 
 [rerere]
 	enabled = true
