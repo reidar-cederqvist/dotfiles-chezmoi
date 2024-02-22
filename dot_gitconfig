@@ -1,6 +1,7 @@
 [user]
-	email = reidar.cederqvist@gmail.com
+	email = reidar.cederqvist@protonmail.com
 	name = Reidar Cederqvist
+	signingkey = /home/reidar/.ssh/id_ed25519.pub
 [push]
 	default = simple
 [core]
@@ -29,3 +30,7 @@
 
 [rerere]
 	enabled = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true

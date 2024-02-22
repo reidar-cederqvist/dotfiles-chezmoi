@@ -1,3 +1,4 @@
 [user]
 	email = reidar.cederqvist@iopsys.eu
 	name = Reidar Cederqvist
+	signingkey = ~/.ssh/iopsys.pub
