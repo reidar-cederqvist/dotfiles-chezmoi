@@ -2,3 +2,5 @@
 	email = reidar.cederqvist@iopsys.eu
 	name = Reidar Cederqvist
 	signingkey = ~/.ssh/iopsys.pub
+[core]
+	sshCommand = ssh -o IdentityFile=~/.ssh/iopsys.pub -o IdentitiesOnly=yes
