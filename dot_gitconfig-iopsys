@@ -3,4 +3,4 @@
 	name = Reidar Cederqvist
 	signingkey = ~/.ssh/iopsys.pub
 [core]
-	sshCommand = ssh -o IdentityFile=~/.ssh/iopsys.pub -o IdentitiesOnly=yes
+	sshCommand = ssh -o IdentityFile=~/.ssh/iopsys -o IdentitiesOnly=yes

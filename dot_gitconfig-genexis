@@ -4,4 +4,4 @@
 	signingkey = ~/.ssh/genexis.pub
 
 [core]
-	sshCommand = ssh -o IdentityFile=~/.ssh/genexis.pub -o IdentitiesOnly=yes
+	sshCommand = ssh -o IdentityFile=~/.ssh/genexis -o IdentitiesOnly=yes
