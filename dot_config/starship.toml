@@ -8,3 +8,8 @@ disabled = true
 
 [directory]
 truncate_to_repo = true
+
+[status]
+disabled = false
+success_symbol = '✓ '
+format = '[$symbol]($style)'
