@@ -13,10 +13,14 @@ return {
 			vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
 			local telescope = require("telescope")
 			telescope.setup({
+				file_ignore_patterns = {
+					"node_modules"
+				},
 				defaults = {},
 				pickers = {
 					find_files = {
 						hidden = true,
+						no_ignore = true,
 					},
 				},
 				extensions = {},

@@ -129,3 +129,5 @@ fi
 if which pfetch 2>/dev/null >/dev/null; then
 	pfetch
 fi
+
+eval "$(starship init bash)"
