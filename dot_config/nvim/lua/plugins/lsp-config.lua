@@ -4,10 +4,12 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
+			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
 			require("mason").setup()
 			require("lspconfig.ui.windows").default_options.border = "single"
+			local capabilities = require("cmp_nvim_lsp").default_capabilites
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
@@ -15,15 +17,18 @@ return {
 				},
 				handlers = {
 					function(server_name) -- default handler (optional)
-						require("lspconfig")[server_name].setup({})
+						require("lspconfig")[server_name].setup({
+							-- This will setup all servers that are in the ensure_installed list
+							capabilities = capabilities
+						})
 					end,
 				},
 			})
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
-			lspconfig.eslint.setup({})
-			lspconfig.tsserver.setup({})
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "show [K]eymap information" })
+			lspconfig.eslint.setup({
+				-- capabilities = capabilities
+			})
+			-- vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "show [K]eymap information" })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition" })
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous LSP diagnostics message" })
