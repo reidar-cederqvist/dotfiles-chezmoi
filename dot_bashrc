@@ -130,4 +130,5 @@ if which pfetch 2>/dev/null >/dev/null; then
 	pfetch
 fi
 
+export STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"
 eval "$(starship init bash)"

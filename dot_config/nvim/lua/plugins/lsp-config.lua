@@ -14,6 +14,7 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"tsserver",
+					"bashls",
 				},
 				handlers = {
 					function(server_name) -- default handler (optional)
@@ -26,10 +27,11 @@ return {
 			})
 			local lspconfig = require("lspconfig")
 			lspconfig.eslint.setup({
-				-- capabilities = capabilities
+				capabilities = capabilities
 			})
-			-- vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "show [K]eymap information" })
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "show [K]eymap information" })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "[G]o to [D]efinition" })
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "[G]o to [R]eference" })
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "[C]ode [A]ction" })
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous LSP diagnostics message" })
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next LSP diagnostics message" })

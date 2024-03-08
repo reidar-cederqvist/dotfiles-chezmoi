@@ -13,3 +13,12 @@ truncate_to_repo = true
 disabled = false
 success_symbol = '✓ '
 format = '[$symbol]($style)'
+
+[git_branch]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_status]
+disabled = true
