@@ -11,13 +11,19 @@ vim.opt.mouse = "a"
 vim.opt.hlsearch = true
 vim.opt.relativenumber = true
 vim.opt.number = true -- Make line numbers default
+vim.opt.autoindent = true
+vim.opt.ww = "l,h,b,s,<,>,[<]"
 vim.opt.splitright = true
+vim.opt.gdefault = true
 vim.opt.breakindent = true
 -- Save undo history
 vim.opt.undofile = true
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.opt.ignorecase = true
+vim.opt.showmatch = true
 vim.opt.smartcase = true
+vim.opt.incsearch = true
+vim.opt.autowrite = true
 -- Decrease update time
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 600
@@ -35,5 +41,6 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+vim.opt.sidescrolloff=15
 -- vim: ts=2 sts=2 sw=2 et
 vim.opt.tabstop = 2

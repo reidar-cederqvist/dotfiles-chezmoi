@@ -21,6 +21,8 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 -- exit insert mode with j-j
 vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode with [jj]" })
 
+vim.keymap.set("v", "v", "<Esc>")
+
 -- move one line up or down with J K
 vim.keymap.set("v", "K", ":m '<+1<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>-2<CR>gv=gv")
