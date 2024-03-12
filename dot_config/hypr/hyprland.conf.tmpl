@@ -33,11 +33,11 @@ workspace = 10, monitor:$secMonitor
 
 # Execute your favorite apps at launch
 # exec-once = waybar & hyprpaper & firefox
-exec-once = ~/.config/hypr/scripts/set_monitors.sh
 exec-once = ~/.config/hypr/xdg-portal-hyprland
 exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec-once = kanshi
 exec-once = ~/.config/hypr/scripts/set_wallpaper.sh
 exec-once = ~/.config/hypr/scripts/start_applications.sh
 
@@ -169,7 +169,7 @@ bind = $mainMod, M, exec, $HOME/.local/bin/find_application.sh "Iopsys Teams"
 bind = $shiftMod, M, exec, $HOME/.local/bin/find_application.sh "Genexis Teams"
 bind = $shiftMod, J, togglesplit, # dwindle
 {{ if eq .chezmoi.hostname "reidar-work-arch" }}
-bind = $shiftMod, R, exec, $HOME/.config/hypr/scripts/set_monitors.sh && $HOME/.config/hypr/scripts/set_wallpaper.sh
+bind = $shiftMod, R, exec, $HOME/.config/hypr/scripts/set_wallpaper.sh
 {{ end }}
 bindl = ,XF86Keyboard, exec, $HOME/.config/hypr/scripts/backlight.sh
 bindl = ,XF86MonBrightnessDown, exec, brightnessctl -d intel_backlight s 10%-
