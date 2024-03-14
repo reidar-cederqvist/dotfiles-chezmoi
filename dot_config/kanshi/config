@@ -1,0 +1,11 @@
+profile undocked {
+		output "eDP-1" enable	
+		exec $HOME/.config/hypr/scripts/fix_workspaces.sh "eDP-1" "eDP-1"
+}
+
+profile docked {
+		output "eDP-1" mode 1920x1080@60 position 2560,360
+		output "Philips Consumer Electronics Company PHL 328P6A AU01835003180" position 0,0 mode 2560x1440@60
+		exec $HOME/.config/hypr/scripts/fix_workspaces.sh "AU01835003180" "eDP-1"
+}
+

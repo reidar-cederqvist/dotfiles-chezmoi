@@ -3,10 +3,7 @@
 
 waybar &
 
-while ! pidof waybar; do
-	echo not runnning
-done
-
+sleep 1
 mako &
 wl-paste --watch cliphist store &
 hyprpaper &
