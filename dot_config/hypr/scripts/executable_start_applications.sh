@@ -3,7 +3,7 @@
 
 waybar &
 
-sleep 1
+$HOME/test.py
 mako &
 wl-paste --watch cliphist store &
 hyprpaper &
@@ -13,3 +13,4 @@ slack -u &
 ckb-next -b &
 nm-applet &
 nextcloud &
+sleep 1
