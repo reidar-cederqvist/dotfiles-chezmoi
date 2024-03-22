@@ -11,6 +11,10 @@ for dir in $search_dirs; do
 	[ -d "$dir" ] || continue
 	entries=$(grep -ril "Name=.*$Application" $dir 2>/dev/null)
 	for entry in $entries; do
+		if type dex; then
+			dex $entry
+			exit $?
+		fi
 		exec_string=$(awk -F 'Exec=' '/Exec=/ {print $2; exit}' $entry)
 		while [[ "$exec_string" == *"%"* ]]; do
 			exec_string=${exec_string%\%*}
