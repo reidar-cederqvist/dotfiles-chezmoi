@@ -45,7 +45,7 @@ set_from_resource $cyan		i3wm.color2	#2AA198
 set_from_resource $dark		i3wm.color1	#00252E
 
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+e exec --no-startup-id dolphin
+bindsym $mod+e exec --no-startup-id thunar
 bindsym $mod+Shift+s exec flameshot gui
 bindsym $mod+b exec --no-startup-id firefox -P
 bindsym $mod+m exec --no-startup-id $HOME/.local/bin/find_application.sh "Iopsys Teams"
@@ -113,7 +113,7 @@ set $workspace11 "11"
 
 
 set $display1 DP-2
-set $display2 HDMI-0
+set $display2 HDMI-1
 
 #set workspace 8, 9 and 10 on laptop-screen and the rest on big screen
 workspace $workspace1 output $display1
